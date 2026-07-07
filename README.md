@@ -1,66 +1,66 @@
 # 🌿 Groundnut Leaf Disease Detection using Deep Learning
 
-## 📌 Project Overview
-
-Groundnut (Peanut) is one of the most important oilseed crops, but its productivity is greatly affected by various leaf diseases. Early detection of these diseases helps farmers take timely preventive measures and reduce crop losses.
-
-This project uses **Deep Learning** with **Transfer Learning (MobileNetV2)** to automatically classify groundnut leaf images into different disease categories.
+A Deep Learning-based image classification system that detects diseases in groundnut (peanut) leaves using **Transfer Learning (MobileNetV2)**. The model classifies leaf images into multiple disease categories and healthy leaves, enabling early disease detection for precision agriculture.
 
 ---
 
-## 🎯 Objectives
+## 📌 Project Overview
 
-- Detect groundnut leaf diseases using image classification.
-- Improve disease diagnosis using Deep Learning.
-- Assist farmers with early disease identification.
-- Compare model performance using evaluation metrics.
+Groundnut is one of the major oilseed crops, and its yield is significantly affected by fungal diseases and nutrient deficiencies. Early identification of these diseases helps farmers take timely preventive measures.
+
+This project uses **MobileNetV2**, a lightweight pre-trained Convolutional Neural Network (CNN), to classify groundnut leaf images into different disease categories.
+
+---
+
+## 🎯 Features
+
+- Image-based disease detection
+- Transfer Learning using MobileNetV2
+- Data Augmentation
+- Multi-class Image Classification
+- Model Evaluation using Accuracy, Precision, Recall & F1-Score
+- Ready-to-use trained model (.h5)
 
 ---
 
 ## 🦠 Disease Classes
 
-The model classifies images into the following categories:
+The dataset contains six classes:
 
-1. Healthy Leaf
-2. Early Leaf Spot
-3. Late Leaf Spot
-4. Rust
-5. Early Rust
-6. Nutrition Deficiency
+- 🌱 Healthy Leaf
+- 🍂 Early Leaf Spot
+- 🍁 Late Leaf Spot
+- 🟤 Rust
+- 🟡 Nutrition Deficiency
+- 🌿 Early Rust *(if available in your dataset)*
 
 ---
 
 ## 📂 Dataset
 
-**Source:** Kaggle Groundnut Leaf Disease Dataset
+The complete dataset is included in this repository.
 
-Dataset contains images of:
-
-- Healthy leaves
-- Diseased leaves
-- Multiple disease categories
-
-### Dataset Structure
+Dataset Structure
 
 ```
-dataset/
+Groundnut-Leaf-Disease-Detection-System/
 │
-├── train/
-│   ├── healthy_leaf/
-│   ├── early_leaf_spot/
-│   ├── late_leaf_spot/
-│   ├── rust/
-│   ├── early_rust/
-│   └── nutrition_deficiency/
+├── healthy leaf/
+├── early_leaf_spot/
+├── late leaf spot/
+├── rust/
+├── nutrition deficiency/
 │
-├── validation/
-│
-└── test/
+├── Background Masking.ipynb
+├── MOBILENET V2 IMPLEMENTATION.ipynb
+├── Final MOBILENET V2 IMPLEMENTATION.ipynb
+├── best_groundnut_model.h5
+├── README.md
 ```
 
 ---
 
-## 🛠 Technologies Used
+## 🛠️ Technologies Used
 
 - Python
 - TensorFlow
@@ -68,23 +68,22 @@ dataset/
 - MobileNetV2
 - NumPy
 - Pandas
-- Matplotlib
 - OpenCV
+- Matplotlib
 - Scikit-learn
-- Google Colab / Jupyter Notebook
+- Jupyter Notebook
 
 ---
 
-## 🧠 Deep Learning Model
+## 🧠 Model Architecture
 
-Transfer Learning Model:
+**Base Model**
 
-- MobileNetV2
-- ImageNet Pretrained Weights
+- MobileNetV2 (ImageNet Weights)
 
-Additional Layers:
+**Custom Layers**
 
-- Global Average Pooling
+- GlobalAveragePooling2D
 - Dense Layer
 - Dropout
 - Softmax Output Layer
@@ -100,27 +99,26 @@ Additional Layers:
 | Epochs | 20 |
 | Optimizer | Adam |
 | Loss Function | Categorical Crossentropy |
-| Learning Rate | 0.001 |
 
 ---
 
 ## 🔄 Data Preprocessing
 
-- Image resizing
-- Image normalization
-- Data augmentation
+- Image Resizing
+- Normalization
+- Data Augmentation
   - Rotation
   - Horizontal Flip
   - Zoom
-  - Shear
   - Width Shift
   - Height Shift
+  - Shear
 
 ---
 
-## 📈 Evaluation Metrics
+## 📈 Model Evaluation
 
-The model is evaluated using:
+The model performance is evaluated using:
 
 - Accuracy
 - Precision
@@ -131,31 +129,28 @@ The model is evaluated using:
 
 ---
 
-## 📊 Workflow
+## 🚀 Workflow
 
 ```
-Groundnut Leaf Images
-          │
-          ▼
-Data Preprocessing
-          │
-          ▼
-Image Augmentation
-          │
-          ▼
-Train / Validation Split
-          │
-          ▼
-MobileNetV2 Transfer Learning
-          │
-          ▼
+Leaf Image
+     │
+     ▼
+Image Preprocessing
+     │
+     ▼
+Data Augmentation
+     │
+     ▼
+MobileNetV2
+     │
+     ▼
 Model Training
-          │
-          ▼
+     │
+     ▼
 Prediction
-          │
-          ▼
-Disease Classification
+     │
+     ▼
+Disease Class
 ```
 
 ---
@@ -163,53 +158,47 @@ Disease Classification
 ## 📁 Project Structure
 
 ```
-Groundnut-Leaf-Disease-Detection/
+Groundnut-Leaf-Disease-Detection-System/
 │
-├── dataset/
-├── notebooks/
-│   └── Groundnut_Disease_Detection.ipynb
+├── .git/
+├── healthy leaf/
+├── early_leaf_spot/
+├── late leaf spot/
+├── rust/
+├── nutrition deficiency/
 │
-├── models/
-│   └── mobilenetv2_model.h5
-│
-├── images/
-│
-├── results/
-│   ├── accuracy.png
-│   ├── loss.png
-│   ├── confusion_matrix.png
-│   └── predictions.png
-│
-├── requirements.txt
+├── Background Masking.ipynb
+├── MOBILENET V2 IMPLEMENTATION.ipynb
+├── Final MOBILENET V2 IMPLEMENTATION.ipynb
+├── best_groundnut_model.h5
 ├── README.md
-└── LICENSE
 ```
 
 ---
 
-## 🚀 Installation
+## 📦 Installation
 
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/Groundnut-Leaf-Disease-Detection.git
+git clone https://github.com/soubhagyaranjanmishra/Groundnut-Leaf-Disease-Detection-System-.git
 ```
 
-Move into the project folder
+Move into the project directory
 
 ```bash
-cd Groundnut-Leaf-Disease-Detection
+cd Groundnut-Leaf-Disease-Detection-System-
 ```
 
 Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install tensorflow keras numpy pandas matplotlib opencv-python scikit-learn
 ```
 
 ---
 
-## ▶️ Run the Project
+## ▶️ Running the Project
 
 Open the notebook
 
@@ -217,33 +206,62 @@ Open the notebook
 jupyter notebook
 ```
 
-or
+Run
 
-```bash
-python predict.py
+```
+Final MOBILENET V2 IMPLEMENTATION.ipynb
+```
+
+or load the trained model
+
+```python
+from tensorflow.keras.models import load_model
+
+model = load_model("best_groundnut_model.h5")
 ```
 
 ---
 
-## 📷 Sample Predictions
+## 📊 Results
 
-| Input Image | Predicted Disease |
-|-------------|------------------|
-| Healthy Leaf | Healthy |
-| Rust Leaf | Rust |
-| Early Leaf Spot | Early Leaf Spot |
-| Nutrition Deficiency | Nutrition Deficiency |
+The trained MobileNetV2 model successfully classifies groundnut leaf images into different disease categories.
+
+Evaluation Metrics include:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
 
 ---
 
-## 📌 Future Improvements
+## 📌 Future Enhancements
 
-- Deploy using Streamlit or Flask
-- Mobile Application for farmers
-- Real-time disease detection
-- Increase dataset size
-- Use EfficientNet or Vision Transformer (ViT)
-- Improve model accuracy with hyperparameter tuning
+- Streamlit Web Application
+- Flask API Deployment
+- Mobile Application
+- Real-time Camera Detection
+- Larger Dataset
+- EfficientNet / Vision Transformer (ViT)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository.
+2. Create a new branch.
+3. Commit your changes.
+4. Push the branch.
+5. Create a Pull Request.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
 
 ---
 
@@ -251,10 +269,14 @@ python predict.py
 
 **Soubhagya Ranjan Mishra**
 
-B.Tech CSE (Data Analytics & Machine Learning)
+B.Tech (Computer Science & Engineering)
+
+Data Analytics & Machine Learning
 
 Centurion University of Technology and Management
 
+GitHub: https://github.com/soubhagyaranjanmishra
+
 ---
 
-## ⭐ If you found this project useful, don't forget to Star the repository!
+⭐ If you found this project useful, please consider giving it a Star.
